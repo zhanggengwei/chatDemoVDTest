@@ -76,9 +76,22 @@
 - (void)textFiledChange:(id)sender
 {
     UITextField * textField = (UITextField *)sender;
-    if(self.numberText.text.length>=10&&self.codePassWord.text.length>=4&&self.PassWord.text.length>=6&&self.againPassWord.text.length>=6)
+    
+    if(textField==self.numberText&&self.numberText.text.length>=12)
     {
+        self.numberText.text = [self.numberText.text substringToIndex:12];
         
+    }
+    if(textField == self.codePassWord && self.codePassWord.text.length>5)
+    {
+        self.codePassWord.text = [self.codePassWord.text substringToIndex:5];
+    }
+    if(self.numberText.text.length>=11&&self.codePassWord.text.length>=4&&self.PassWord.text.length>=6&&self.againPassWord.text.length>=6)
+    {
+        self.VDBottomBtn.enabled = YES;
+    }else
+    {
+        self.VDBottomBtn.enabled = NO;
     }
 }
 
@@ -98,9 +111,9 @@
     }
     else if(self.style == VDResetPassWordController)
     {
-
+       [[VDRequestEngine shareEngine]requestResetPassWordResponse:^(VDHttpResponse * aTaskResponse) {
+           
+       } Account:self.numberText.text passWord:[self.PassWord.text md5] Code:self.codePassWord.text];
     }
-
-    
 }
 @end

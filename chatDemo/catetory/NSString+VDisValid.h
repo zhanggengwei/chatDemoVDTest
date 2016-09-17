@@ -9,5 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface NSString (VDisValid)
--(BOOL) isValid;
+- (BOOL) isValid;
+- (BOOL)checkPhoneNumberValid;
+
 @end

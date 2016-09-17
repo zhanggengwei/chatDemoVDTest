@@ -76,6 +76,7 @@
 		75907AD81D8CF06200B760A3 /* VDDatePickSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75907AD71D8CF06200B760A3 /* VDDatePickSelectView.m */; };
 		75907ADB1D8CF8E400B760A3 /* PQActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 75907ADA1D8CF8E400B760A3 /* PQActionSheet.m */; };
 		75907ADD1D8D260D00B760A3 /* btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 75907ADC1D8D260D00B760A3 /* btn.png */; };
+		75907AE01D8D306C00B760A3 /* VDLogFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 75907ADF1D8D306C00B760A3 /* VDLogFile.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -216,6 +217,8 @@
 		75907AD91D8CF8E400B760A3 /* PQActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PQActionSheet.h; sourceTree = "<group>"; };
 		75907ADA1D8CF8E400B760A3 /* PQActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQActionSheet.m; sourceTree = "<group>"; };
 		75907ADC1D8D260D00B760A3 /* btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn.png; sourceTree = "<group>"; };
+		75907ADE1D8D306C00B760A3 /* VDLogFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VDLogFile.h; sourceTree = "<group>"; };
+		75907ADF1D8D306C00B760A3 /* VDLogFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VDLogFile.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -461,6 +464,8 @@
 				755043321D8CCC11007FB439 /* RJChatTools.m */,
 				755043331D8CCC11007FB439 /* VDUrlObject.h */,
 				755043341D8CCC11007FB439 /* VDUrlObject.m */,
+				75907ADE1D8D306C00B760A3 /* VDLogFile.h */,
+				75907ADF1D8D306C00B760A3 /* VDLogFile.m */,
 			);
 			path = tools;
 			sourceTree = "<group>";
@@ -837,6 +842,7 @@
 				75907AD81D8CF06200B760A3 /* VDDatePickSelectView.m in Sources */,
 				7550436F1D8CCC11007FB439 /* RJBaseViewController.m in Sources */,
 				755042FC1D8CCBEA007FB439 /* NSString+MD5.m in Sources */,
+				75907AE01D8D306C00B760A3 /* VDLogFile.m in Sources */,
 				755043101D8CCBFF007FB439 /* RJEngineManager.m in Sources */,
 				7550436D1D8CCC11007FB439 /* RJChatTools.m in Sources */,
 				7550435A1D8CCC11007FB439 /* OTFileManager.m in Sources */,

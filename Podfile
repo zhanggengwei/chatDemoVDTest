@@ -21,4 +21,5 @@ target 'chatDemo' do
      pod 'CocoaLumberjack', '~> 2.3.0'
     pod 'CCLogSystem', '~> 1.0.1'
     pod 'ImagePiker', '~> 0.1.0'
+     pod 'Bugly', '~> 2.4.0'
 end

@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - Bugly (2.4.0)
   - CCLogSystem (1.0.1)
   - CocoaLumberjack (2.3.0):
     - CocoaLumberjack/Default (= 2.3.0)
@@ -54,6 +55,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6)
+  - Bugly (~> 2.4.0)
   - CCLogSystem (~> 1.0.1)
   - CocoaLumberjack (~> 2.3.0)
   - DateTools (~> 1.7.0)
@@ -74,6 +76,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  Bugly: 3b56d8365c5687f74fd6fbb50c5b7ede3cdac96c
   CCLogSystem: 841a462314c211c561fd846b08fea718e78a567b
   CocoaLumberjack: 97fab7ee5f507fe54445cca7ea80f926729cfd15
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
@@ -92,6 +95,6 @@ SPEC CHECKSUMS:
   SFHFKeychainUtils: 9576b411a79a058f4d5381ace6f3242b9a62e664
   ZXingObjC: bf15b3814f7a105b6d99f47da2333c93a063650a
 
-PODFILE CHECKSUM: 999e50f537e84c7bd8a782ba1c8d9a8a68fa301d
+PODFILE CHECKSUM: 24d449d4a37b7d8b37a264d2ac8dbb6d89a7242a
 
 COCOAPODS: 1.0.1

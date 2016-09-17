@@ -24,10 +24,10 @@
 #import <Masonry/Masonry.h>
 #import "UIViewController+VDAlertController.h"
 #import <AFNetworking/AFNetworking.h>
-
+#import <CocoaLumberjack/CocoaLumberjack.h>
 #import "UIImageView+Utils.h"
 #import "SFHFKeychainUtils-umbrella.h"
-
+#import "NSString+MD5.h"
 #define  kppRequestSucessCode 200
 
 
@@ -51,23 +51,7 @@ _Pragma("clang diagnostic pop") \
 //#import "AFHTTPSessionManager.h"
 
 #import "RJChatTools.h"
-//#ifdef __OBJC__
-//
-//#import <CocoaLumberjack\CocoaLumberjack.h>
-//
-//#endif
-//
-//
-//#ifdef DEBUG
-//
-//static constDDLogLevel ddLogLevel =DDLogLevelVerbose;
-//
-//#else
-//
-//static const DDLogLevel ddLogLevel = DDLogLevelOff;
-//
-//
-//#endif
+
 
 #define KNOTIFICATION_LOGINCHANGE @"loginStateChange"
 #define KNOTIFICATION_CALL @"callOutWithChatter"

@@ -15,4 +15,10 @@
         return NO;
     return YES;
 }
+- (BOOL)checkPhoneNumberValid
+{
+    
+    return YES;
+    
+}
 @end
