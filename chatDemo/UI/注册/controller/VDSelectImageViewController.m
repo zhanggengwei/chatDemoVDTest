@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *maleBtn;
 @property (weak, nonatomic) IBOutlet UIButton *timeBtn;
 @property (weak, nonatomic) IBOutlet UIButton *finishBtn;
-
+@property (strong,nonatomic) NSString * birthday;
 @end
 
 @implementation VDSelectImageViewController
@@ -31,7 +31,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.selectIconImageView.image = [UIImage imageNamed:@"add.png"];
     [self.femaleBtn setBackgroundImage:[UIImage imageNamed:@"sexselect"] forState:UIControlStateSelected];
     [self.femaleBtn setBackgroundImage:[UIImage imageNamed:@"sexunselect"] forState:UIControlStateNormal];
     
@@ -102,11 +101,8 @@
     NSLog(@"info == %@",info);
     UIImage * image = info[@"UIImagePickerControllerOriginalImage"];
     image = [image imageCompressForSize:image targetSize:CGSizeMake(WIDTH, HEIGHT)];
-    
-    
     [picker dismissViewControllerAnimated:NO completion:nil];
     LECropPictureViewController * controller = [[LECropPictureViewController alloc]initWithImage:image andCropPictureType:LECropPictureTypeRect];
-    
     controller.photoAcceptedBlock = ^(UIImage * image)
     {
         NSLog(@"%@",image);
@@ -142,11 +138,22 @@
 
 - (IBAction)finishAction:(id)sender
 {
+    [[VDRequestEngine shareEngine]requestRegisterResponse:^(VDHttpResponse *aTaskResponse) {
+        NSLog(@"aTaskResponse==%@",aTaskResponse);
+        
+        
+    } Account:[self.countryCode stringByAppendingString:self.account] passWord:self.passWord userNickName:self.account Code:self.code Birthday:self.birthday weChatID:nil Sex:@"" iconImageFiles:nil];
+    
+    
+    
 }
 #pragma mark delegate
 
 - (void)datePickerSelectTime:(VDDatePickSelectView *)view datePicker:(UIDatePicker *)picker
 {
     NSLog(@"%@",picker.date);
+    NSDateFormatter * formatter = [NSDateFormatter new];
+    self.birthday = @"2016:09:09 00:00:00";
+    
 }
 @end

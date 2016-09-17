@@ -40,7 +40,7 @@
         [self.VDBottomBtn setTitle:@"完成" forState:UIControlStateNormal];
         
     }
-    
+    self.VDBottomBtn.enabled = NO;
 }
 
 - (void)didReceiveMemoryWarning
