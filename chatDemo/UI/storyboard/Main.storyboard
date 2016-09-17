@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -288,8 +288,10 @@
                     <connections>
                         <outlet property="PassWord" destination="u56-Qp-59a" id="FQ2-6y-Rgh"/>
                         <outlet property="VDBottomBtn" destination="lnl-2y-uss" id="GPp-f2-5zn"/>
+                        <outlet property="againPassWord" destination="ND0-DD-JRC" id="0ow-eR-wz8"/>
                         <outlet property="backBtn" destination="jwW-lU-6KI" id="Qc1-QQ-Icd"/>
                         <outlet property="backView" destination="v4t-fZ-zws" id="s07-Yk-7KQ"/>
+                        <outlet property="codePassWord" destination="OUr-EF-sT9" id="ptS-mR-k8t"/>
                         <outlet property="getCodeBtn" destination="QH5-dc-U9E" id="6Kx-Qw-LNa"/>
                         <outlet property="numberText" destination="END-Sd-BNy" id="wY9-Ya-Z32"/>
                     </connections>

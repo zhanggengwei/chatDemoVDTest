@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *getCodeBtn;
 @property (weak, nonatomic) IBOutlet UITextField *numberText;
 @property (weak, nonatomic) IBOutlet UIButton *backBtn;
+@property (weak, nonatomic) IBOutlet UITextField *codePassWord;
+@property (weak, nonatomic) IBOutlet UITextField *againPassWord;
 @property (weak, nonatomic) IBOutlet UIButton *VDBottomBtn;
 @end
 
@@ -25,6 +27,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+#pragma mark textField Action
+    [_PassWord addTarget:self action:@selector(textFiledChange:) forControlEvents:UIControlEventEditingChanged];
+    
+    
+    
+    
     self.backView.layer.cornerRadius = 10;
     self.backView.layer.masksToBounds = YES;
     self.backBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 50);
@@ -64,10 +73,25 @@
     [self.getCodeBtn startTime];
 
 }
+- (void)textFiledChange:(id)sender
+{
+    UITextField * textField = (UITextField *)sender;
+    if(self.numberText.text.length>=10&&self.codePassWord.text.length>=4&&self.PassWord.text.length>=6&&self.againPassWord.text.length>=6)
+    {
+        
+    }
+}
+
 - (IBAction)registerBtn:(id)sender
 {
     if(self.style == VDReginsterController)
     {
+        
+        if(![self.againPassWord.text isEqualToString:self.PassWord.text])
+        {
+            return;
+        }
+        
         VDSelectImageViewController * controller = [VDSelectImageViewController createVDSelectImageViewController];
         [self.navigationController pushViewController:controller animated:YES];
         
