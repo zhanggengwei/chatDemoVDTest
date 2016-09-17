@@ -23,6 +23,13 @@
 @end
 
 @implementation RegisterViewController
+
++ (instancetype)createRegisterViewController
+{
+    return [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass(self.class)];
+    
+}
+
 #pragma mark life_cycle
 - (void)viewDidLoad
 {
@@ -30,10 +37,9 @@
     
 #pragma mark textField Action
     [_PassWord addTarget:self action:@selector(textFiledChange:) forControlEvents:UIControlEventEditingChanged];
-    
-    
-    
-    
+    [_numberText addTarget:self action:@selector(textFiledChange:) forControlEvents:UIControlEventEditingChanged];
+    [_codePassWord addTarget:self action:@selector(textFiledChange:) forControlEvents:UIControlEventEditingChanged];
+    [_againPassWord addTarget:self action:@selector(textFiledChange:) forControlEvents:UIControlEventEditingChanged];
     self.backView.layer.cornerRadius = 10;
     self.backView.layer.masksToBounds = YES;
     self.backBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 50);
@@ -47,8 +53,8 @@
     else
     {
         [self.VDBottomBtn setTitle:@"完成" forState:UIControlStateNormal];
-        
     }
+    [self.VDBottomBtn setBackgroundImage:[UIImage imageNamed:@"finishbtn"] forState:UIControlStateDisabled];
     self.VDBottomBtn.enabled = NO;
 }
 
@@ -79,12 +85,12 @@
     
     if(textField==self.numberText&&self.numberText.text.length>=12)
     {
-        self.numberText.text = [self.numberText.text substringToIndex:12];
+        self.numberText.text = [self.numberText.text substringToIndex:11];
         
     }
     if(textField == self.codePassWord && self.codePassWord.text.length>5)
     {
-        self.codePassWord.text = [self.codePassWord.text substringToIndex:5];
+        self.codePassWord.text = [self.codePassWord.text substringToIndex:4];
     }
     if(self.numberText.text.length>=11&&self.codePassWord.text.length>=4&&self.PassWord.text.length>=6&&self.againPassWord.text.length>=6)
     {
@@ -112,6 +118,13 @@
     else if(self.style == VDResetPassWordController)
     {
        [[VDRequestEngine shareEngine]requestResetPassWordResponse:^(VDHttpResponse * aTaskResponse) {
+           if(aTaskResponse.code.integerValue == kppRequestSucessCode)
+           {
+               VDLogInfo(@"密码修改成功");
+           }else
+           {
+               VDLogError(@"密码重置失败");
+           }
            
        } Account:self.numberText.text passWord:[self.PassWord.text md5] Code:self.codePassWord.text];
     }

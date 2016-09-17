@@ -51,7 +51,7 @@
 		755043671D8CCC11007FB439 /* sel_contact.png in Resources */ = {isa = PBXBuildFile; fileRef = 755043281D8CCC11007FB439 /* sel_contact.png */; };
 		755043681D8CCC11007FB439 /* sel_msg.png in Resources */ = {isa = PBXBuildFile; fileRef = 755043291D8CCC11007FB439 /* sel_msg.png */; };
 		755043691D8CCC11007FB439 /* sel_mydy.png in Resources */ = {isa = PBXBuildFile; fileRef = 7550432A1D8CCC11007FB439 /* sel_mydy.png */; };
-		7550436A1D8CCC11007FB439 /* 返回按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = 7550432B1D8CCC11007FB439 /* 返回按钮.png */; };
+		7550436A1D8CCC11007FB439 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 7550432B1D8CCC11007FB439 /* back.png */; };
 		7550436B1D8CCC11007FB439 /* EaseSDKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7550432E1D8CCC11007FB439 /* EaseSDKHelper.m */; };
 		7550436C1D8CCC11007FB439 /* RJBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 755043301D8CCC11007FB439 /* RJBase.m */; };
 		7550436D1D8CCC11007FB439 /* RJChatTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 755043321D8CCC11007FB439 /* RJChatTools.m */; };
@@ -77,6 +77,8 @@
 		75907ADB1D8CF8E400B760A3 /* PQActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 75907ADA1D8CF8E400B760A3 /* PQActionSheet.m */; };
 		75907ADD1D8D260D00B760A3 /* btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 75907ADC1D8D260D00B760A3 /* btn.png */; };
 		75907AE01D8D306C00B760A3 /* VDLogFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 75907ADF1D8D306C00B760A3 /* VDLogFile.m */; };
+		75907AE31D8D705F00B760A3 /* RJBaseViewController+buttonItemsAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 75907AE21D8D705F00B760A3 /* RJBaseViewController+buttonItemsAction.m */; };
+		75907AE51D8D74E400B760A3 /* finishbtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 75907AE41D8D74E400B760A3 /* finishbtn.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,7 +179,7 @@
 		755043281D8CCC11007FB439 /* sel_contact.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sel_contact.png; sourceTree = "<group>"; };
 		755043291D8CCC11007FB439 /* sel_msg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sel_msg.png; sourceTree = "<group>"; };
 		7550432A1D8CCC11007FB439 /* sel_mydy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sel_mydy.png; sourceTree = "<group>"; };
-		7550432B1D8CCC11007FB439 /* 返回按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "返回按钮.png"; sourceTree = "<group>"; };
+		7550432B1D8CCC11007FB439 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		7550432D1D8CCC11007FB439 /* EaseSDKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseSDKHelper.h; sourceTree = "<group>"; };
 		7550432E1D8CCC11007FB439 /* EaseSDKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseSDKHelper.m; sourceTree = "<group>"; };
 		7550432F1D8CCC11007FB439 /* RJBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJBase.h; sourceTree = "<group>"; };
@@ -219,6 +221,9 @@
 		75907ADC1D8D260D00B760A3 /* btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn.png; sourceTree = "<group>"; };
 		75907ADE1D8D306C00B760A3 /* VDLogFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VDLogFile.h; sourceTree = "<group>"; };
 		75907ADF1D8D306C00B760A3 /* VDLogFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VDLogFile.m; sourceTree = "<group>"; };
+		75907AE11D8D705F00B760A3 /* RJBaseViewController+buttonItemsAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RJBaseViewController+buttonItemsAction.h"; sourceTree = "<group>"; };
+		75907AE21D8D705F00B760A3 /* RJBaseViewController+buttonItemsAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RJBaseViewController+buttonItemsAction.m"; sourceTree = "<group>"; };
+		75907AE41D8D74E400B760A3 /* finishbtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finishbtn.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -377,6 +382,8 @@
 				755042F71D8CCBEA007FB439 /* UIImageView+Utils.m */,
 				755042F81D8CCBEA007FB439 /* UIViewController+VDAlertController.h */,
 				755042F91D8CCBEA007FB439 /* UIViewController+VDAlertController.m */,
+				75907AE11D8D705F00B760A3 /* RJBaseViewController+buttonItemsAction.h */,
+				75907AE21D8D705F00B760A3 /* RJBaseViewController+buttonItemsAction.m */,
 			);
 			path = catetory;
 			sourceTree = "<group>";
@@ -434,6 +441,7 @@
 		755043211D8CCC11007FB439 /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				75907AE41D8D74E400B760A3 /* finishbtn.png */,
 				75907ADC1D8D260D00B760A3 /* btn.png */,
 				75907AD21D8CE8D700B760A3 /* sexselect.png */,
 				75907AD41D8CE8E700B760A3 /* sexunselect.png */,
@@ -448,7 +456,7 @@
 				755043281D8CCC11007FB439 /* sel_contact.png */,
 				755043291D8CCC11007FB439 /* sel_msg.png */,
 				7550432A1D8CCC11007FB439 /* sel_mydy.png */,
-				7550432B1D8CCC11007FB439 /* 返回按钮.png */,
+				7550432B1D8CCC11007FB439 /* back.png */,
 			);
 			path = resource;
 			sourceTree = "<group>";
@@ -734,7 +742,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75907AD51D8CE8E700B760A3 /* sexunselect.png in Resources */,
-				7550436A1D8CCC11007FB439 /* 返回按钮.png in Resources */,
+				7550436A1D8CCC11007FB439 /* back.png in Resources */,
 				755043731D8CCC11007FB439 /* AddContact.Storyboard in Resources */,
 				755043661D8CCC11007FB439 /* qq.png in Resources */,
 				755042E61D8CCBE2007FB439 /* VDSelect.storyboard in Resources */,
@@ -751,6 +759,7 @@
 				755042E51D8CCBE2007FB439 /* RJTabbarController.storyboard in Resources */,
 				755043621D8CCC11007FB439 /* contact.png in Resources */,
 				755042A91D8CC602007FB439 /* Assets.xcassets in Resources */,
+				75907AE51D8D74E400B760A3 /* finishbtn.png in Resources */,
 				755043681D8CCC11007FB439 /* sel_msg.png in Resources */,
 				755043761D8CCC11007FB439 /* VDSelectImageViewController.storyboard in Resources */,
 				755043671D8CCC11007FB439 /* sel_contact.png in Resources */,
@@ -829,6 +838,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75907AE31D8D705F00B760A3 /* RJBaseViewController+buttonItemsAction.m in Sources */,
 				7550435E1D8CCC11007FB439 /* VDHttpResponse.m in Sources */,
 				755043011D8CCBEA007FB439 /* UIImageView+Utils.m in Sources */,
 				755043781D8CCC11007FB439 /* RegisterViewController.m in Sources */,

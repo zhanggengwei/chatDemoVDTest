@@ -9,17 +9,15 @@
 #import "RJBaseViewController.h"
 #import "AppDelegate.h"
 @interface RJBaseViewController ()
-@property (nonatomic,strong) UIBarButtonItem * rightItem;
+@property (nonatomic,strong) UIBarButtonItem * leftItem;
+
 @end
 
 @implementation RJBaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:self action:nil];
-    
-    
+    self.navigationItem.leftBarButtonItem = self.leftItem;
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(LoginState:) name:LOGINSUCESS object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(LoginState:) name:LOGOUTSUCESS object:nil];
     
@@ -57,6 +55,20 @@
         
     }
     return _rightItem;
+}
+- (UIBarButtonItem *)leftItem
+{
+    if(_leftItem == nil)
+    {
+        UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        btn.frame = CGRectMake(0, 0, 60, 50);
+        btn.imageEdgeInsets = UIEdgeInsetsMake(8, 4, 8, 30);
+        [btn setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+        _leftItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
+        [btn addTarget:self action:@selector(leftItemAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _leftItem;
+    
 }
 
 -(void)clickRightAction:(id)sender{

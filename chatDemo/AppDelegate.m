@@ -75,6 +75,7 @@ didFinishLaunchingWithOptions:launchOptions
     
     [self.window makeKeyAndVisible];
     
+    [VDLogFile new];
     
     
     return YES;

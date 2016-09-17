@@ -7,13 +7,11 @@
 //
 
 #import "LogInViewController.h"
-//#import "EMChatManagerLoginDelegate.h"
-//#import <commonDefs.h>
-//#import <EaseMob.h>
-//#import <EMError.h>
 #import "RJListTableViewController.h"
 #import "VDRequestEngine.h"
 #import "NSString+MD5.h"
+#import "RegisterViewController.h"
+#import "RJNavViewController.h"
 @interface LogInViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *IconimageView;
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
@@ -37,6 +35,16 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)forgetPassWord:(id)sender
+
+{
+    RegisterViewController * controller = [RegisterViewController createRegisterViewController];
+    controller.style = VDResetPassWordController;
+    controller.title = @"重置密码";
+    [self presentViewController:  [[RJNavViewController alloc]initWithRootViewController:controller] animated:YES completion:nil];
+    
+    
 }
 - (IBAction)btnAction:(id)sender {
  

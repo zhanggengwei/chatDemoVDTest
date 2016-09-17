@@ -19,5 +19,5 @@ typedef NS_ENUM(NSInteger,ControlerStyle)
 
 @interface RegisterViewController : RJBaseViewController
 @property (nonatomic,assign) ControlerStyle style;
-
++ (instancetype)createRegisterViewController;
 @end
