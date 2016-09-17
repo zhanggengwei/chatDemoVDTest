@@ -51,14 +51,12 @@ static const DDLogLevel ddLogLevel = DDLogLevelOff;
         
         DDFileLogger *fileLogger = [[DDFileLogger alloc]initWithLogFileManager:lfm];
         fileLogger.rollingFrequency = 60 * 60 * 24; //one day per log file
-        
         [DDLog addLogger:fileLogger];
         [DDLog addLogger:[DDASLLogger sharedInstance]];
         [DDLog addLogger:[DDTTYLogger sharedInstance]];
-        
-//        BuglyConfig *cfg = [[BuglyConfig alloc]init];
-//        cfg.reportLogLevel = BuglyLogLevelDebug;
-//        [Bugly startWithAppId:kPPAppKeyBugly config:cfg];
+        BuglyConfig *cfg = [[BuglyConfig alloc]init];
+        cfg.reportLogLevel = BuglyLogLevelDebug;
+        [Bugly startWithAppId:BuglyAppKey config:cfg];
     }
 }
 

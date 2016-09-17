@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "33197908C1F2FAD98B91D38423A25975600B0B02",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "689873C64E011BCFA273244DEB476DB580EEC5F5" : 9223372036854775807,
+    "33197908C1F2FAD98B91D38423A25975600B0B02" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "27C082DD-D8EC-4B7F-8FA4-B973B1545B63",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "689873C64E011BCFA273244DEB476DB580EEC5F5" : "",
+    "33197908C1F2FAD98B91D38423A25975600B0B02" : "chatDemoVDTest\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "chatDemo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "chatDemo.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/zhanggengwei\/chatDemoVDTest.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "33197908C1F2FAD98B91D38423A25975600B0B02"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/zhanggengwei\/HXCardSwitchView-master.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "689873C64E011BCFA273244DEB476DB580EEC5F5"
+    }
+  ]
+}
