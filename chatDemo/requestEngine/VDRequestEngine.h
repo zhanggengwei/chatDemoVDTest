@@ -20,7 +20,7 @@
 - (void)requsetSearchUser:(PPResponseBlock())responseBlock identify:(NSString *)aidentify;
 - (void)requsetBindPhone:(PPResponseBlock())responseBlock phone:(NSString *)aphoneNumber Code:(NSString *)acode PassWord:(NSString *)apassWord;
 - (void)requsetBindWeChat:(PPResponseBlock())responseBlock weChatId:(NSString *)aweChatId;
-
-
+// 0 代表者注册  1 代表其他
+-(void)requestRegisterResponse:(void (^)(id))responseBlock Account:(NSString *)account sendType:(NSInteger)type;
 
 @end

@@ -190,4 +190,30 @@
     }];
 }
 
+-(void)requestRegisterResponse:(void (^)(id))responseBlock Account:(NSString *)account sendType:(NSInteger)type
+{
+    VDHTTPRequestOperationManager * manager = [VDHTTPRequestOperationManager manager];
+    NSMutableDictionary * param = [NSMutableDictionary new];
+    if(![account checkPhoneNumberValid])
+    {
+        VDLogError(@"手机号码错误");
+        
+        return;
+        
+    }
+    [param setObject:account forKey:@"account"];
+    [param setObject:@(type) forKey:@"type"];
+    
+    [manager POST:kPPUrlSendSms parameters:param success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSError * error;
+        VDHttpResponse * response = [[VDHttpResponse alloc]initWithData:responseObject error:&error];
+        [self _completeWithResponse:response block:responseBlock];
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        VDHttpResponse * response = [VDHttpResponse responseWithError:error];
+        [self _completeWithResponse:response block:responseBlock];
+        
+    }];
+    
+}
+
 @end

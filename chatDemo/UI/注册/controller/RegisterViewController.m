@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *codePassWord;
 @property (weak, nonatomic) IBOutlet UITextField *againPassWord;
 @property (weak, nonatomic) IBOutlet UIButton *VDBottomBtn;
+@property (strong,nonatomic) NSString * contryCodeStr;
 @end
 
 @implementation RegisterViewController
@@ -34,6 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.contryCodeStr = @"+86";
     
 #pragma mark textField Action
     [_PassWord addTarget:self action:@selector(textFiledChange:) forControlEvents:UIControlEventEditingChanged];
@@ -126,7 +128,7 @@
                VDLogError(@"密码重置失败");
            }
            
-       } Account:self.numberText.text passWord:[self.PassWord.text md5] Code:self.codePassWord.text];
+       } Account:[self.contryCodeStr stringByAppendingString:self.numberText.text]  passWord:[self.PassWord.text md5] Code:self.codePassWord.text];
     }
 }
 @end

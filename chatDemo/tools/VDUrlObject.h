@@ -13,12 +13,14 @@
 #pragma mark - user module
 //登录
 #define KPPUrlLogin [NSString stringWithFormat:@"%@app/user/login",kPPUrlHttp]
+// 密码重置
 #define KPPUrlResetPassWord [NSString stringWithFormat:@"%@app/user/resetPassword",kPPUrlHttp]
-
+//注册
 #define kPPUrlRegister [NSString stringWithFormat:@"%@app/user/register",kPPUrlHttp]
-
+//密码更新
 #define kPPUrlUpdatePassWord [NSString stringWithFormat:@"%@app/user/updatePassword",kPPUrlHttp]
 //getInfo
+// 获取个人信息
 #define kPPUrlGetInfo  [NSString stringWithFormat:@"%@app/user/getInfo",kPPUrlHttp]
 
 //bindPhone
@@ -28,7 +30,7 @@
 #define kPPUrlBindWeChat [NSString stringWithFormat:@"%@app/user/bindWeChat",kPPUrlHttp]
 
 #define kPPUrlSearchUsers [NSString stringWithFormat:@"%@app/user/search",kPPUrlHttp]
-
+#define kPPUrlSendSms [NSString stringWithFormat:@"%@app/sms/send",kPPUrlHttp]
 
 @interface VDUrlObject : NSObject
 
