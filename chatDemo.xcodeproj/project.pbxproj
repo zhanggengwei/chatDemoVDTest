@@ -69,6 +69,13 @@
 		755043791D8CCC11007FB439 /* VDSelectImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 755043511D8CCC11007FB439 /* VDSelectImageViewController.m */; };
 		7550437A1D8CCC11007FB439 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 755043561D8CCC11007FB439 /* LogInViewController.m */; };
 		7550437B1D8CCC11007FB439 /* RJBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 755043591D8CCC11007FB439 /* RJBackView.m */; };
+		75907AD01D8CE8BE00B760A3 /* female.png in Resources */ = {isa = PBXBuildFile; fileRef = 75907ACE1D8CE8BE00B760A3 /* female.png */; };
+		75907AD11D8CE8BE00B760A3 /* male.png in Resources */ = {isa = PBXBuildFile; fileRef = 75907ACF1D8CE8BE00B760A3 /* male.png */; };
+		75907AD31D8CE8D700B760A3 /* sexselect.png in Resources */ = {isa = PBXBuildFile; fileRef = 75907AD21D8CE8D700B760A3 /* sexselect.png */; };
+		75907AD51D8CE8E700B760A3 /* sexunselect.png in Resources */ = {isa = PBXBuildFile; fileRef = 75907AD41D8CE8E700B760A3 /* sexunselect.png */; };
+		75907AD81D8CF06200B760A3 /* VDDatePickSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75907AD71D8CF06200B760A3 /* VDDatePickSelectView.m */; };
+		75907ADB1D8CF8E400B760A3 /* PQActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 75907ADA1D8CF8E400B760A3 /* PQActionSheet.m */; };
+		75907ADD1D8D260D00B760A3 /* btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 75907ADC1D8D260D00B760A3 /* btn.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +207,15 @@
 		755043561D8CCC11007FB439 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		755043581D8CCC11007FB439 /* RJBackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJBackView.h; sourceTree = "<group>"; };
 		755043591D8CCC11007FB439 /* RJBackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJBackView.m; sourceTree = "<group>"; };
+		75907ACE1D8CE8BE00B760A3 /* female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = female.png; sourceTree = "<group>"; };
+		75907ACF1D8CE8BE00B760A3 /* male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = male.png; sourceTree = "<group>"; };
+		75907AD21D8CE8D700B760A3 /* sexselect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sexselect.png; sourceTree = "<group>"; };
+		75907AD41D8CE8E700B760A3 /* sexunselect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sexunselect.png; sourceTree = "<group>"; };
+		75907AD61D8CF06200B760A3 /* VDDatePickSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VDDatePickSelectView.h; sourceTree = "<group>"; };
+		75907AD71D8CF06200B760A3 /* VDDatePickSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VDDatePickSelectView.m; sourceTree = "<group>"; };
+		75907AD91D8CF8E400B760A3 /* PQActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PQActionSheet.h; sourceTree = "<group>"; };
+		75907ADA1D8CF8E400B760A3 /* PQActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQActionSheet.m; sourceTree = "<group>"; };
+		75907ADC1D8D260D00B760A3 /* btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -415,6 +431,11 @@
 		755043211D8CCC11007FB439 /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				75907ADC1D8D260D00B760A3 /* btn.png */,
+				75907AD21D8CE8D700B760A3 /* sexselect.png */,
+				75907AD41D8CE8E700B760A3 /* sexunselect.png */,
+				75907ACE1D8CE8BE00B760A3 /* female.png */,
+				75907ACF1D8CE8BE00B760A3 /* male.png */,
 				755043221D8CCC11007FB439 /* add.png */,
 				755043231D8CCC11007FB439 /* contact.png */,
 				755043241D8CCC11007FB439 /* leftbackiamge.png */,
@@ -554,6 +575,10 @@
 		755043521D8CCC11007FB439 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				75907AD91D8CF8E400B760A3 /* PQActionSheet.h */,
+				75907ADA1D8CF8E400B760A3 /* PQActionSheet.m */,
+				75907AD61D8CF06200B760A3 /* VDDatePickSelectView.h */,
+				75907AD71D8CF06200B760A3 /* VDDatePickSelectView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -703,16 +728,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75907AD51D8CE8E700B760A3 /* sexunselect.png in Resources */,
 				7550436A1D8CCC11007FB439 /* 返回按钮.png in Resources */,
 				755043731D8CCC11007FB439 /* AddContact.Storyboard in Resources */,
 				755043661D8CCC11007FB439 /* qq.png in Resources */,
 				755042E61D8CCBE2007FB439 /* VDSelect.storyboard in Resources */,
 				755042AC1D8CC602007FB439 /* LaunchScreen.storyboard in Resources */,
+				75907ADD1D8D260D00B760A3 /* btn.png in Resources */,
 				755043651D8CCC11007FB439 /* mydy.png in Resources */,
+				75907AD31D8CE8D700B760A3 /* sexselect.png in Resources */,
 				755042E41D8CCBE2007FB439 /* Main.storyboard in Resources */,
+				75907AD01D8CE8BE00B760A3 /* female.png in Resources */,
 				755043691D8CCC11007FB439 /* sel_mydy.png in Resources */,
 				755043751D8CCC11007FB439 /* RJTabbarController.storyboard in Resources */,
 				755043611D8CCC11007FB439 /* add.png in Resources */,
+				75907AD11D8CE8BE00B760A3 /* male.png in Resources */,
 				755042E51D8CCBE2007FB439 /* RJTabbarController.storyboard in Resources */,
 				755043621D8CCC11007FB439 /* contact.png in Resources */,
 				755042A91D8CC602007FB439 /* Assets.xcassets in Resources */,
@@ -804,6 +834,7 @@
 				7550437B1D8CCC11007FB439 /* RJBackView.m in Sources */,
 				755042A41D8CC602007FB439 /* ViewController.m in Sources */,
 				755043601D8CCC11007FB439 /* VDUserInfoEngine.m in Sources */,
+				75907AD81D8CF06200B760A3 /* VDDatePickSelectView.m in Sources */,
 				7550436F1D8CCC11007FB439 /* RJBaseViewController.m in Sources */,
 				755042FC1D8CCBEA007FB439 /* NSString+MD5.m in Sources */,
 				755043101D8CCBFF007FB439 /* RJEngineManager.m in Sources */,
@@ -831,6 +862,7 @@
 				755043021D8CCBEA007FB439 /* UIViewController+VDAlertController.m in Sources */,
 				7550436C1D8CCC11007FB439 /* RJBase.m in Sources */,
 				755043791D8CCC11007FB439 /* VDSelectImageViewController.m in Sources */,
+				75907ADB1D8CF8E400B760A3 /* PQActionSheet.m in Sources */,
 				7550429E1D8CC602007FB439 /* main.m in Sources */,
 				755042DA1D8CCBD8007FB439 /* LeftSlideViewController.m in Sources */,
 				7550430F1D8CCBFF007FB439 /* RJContactViewController.m in Sources */,

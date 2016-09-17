@@ -21,6 +21,7 @@
 #import "NSString+VDisValid.h"
 #import "VDHttpResponse.h"
 #import "VDUserInfoEngine.h"
+#import <Masonry/Masonry.h>
 #import "UIViewController+VDAlertController.h"
 #import <AFNetworking/AFNetworking.h>
 

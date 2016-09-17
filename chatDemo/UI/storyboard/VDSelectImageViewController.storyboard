@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -33,13 +33,82 @@
                                                     <outletCollection property="gestureRecognizers" destination="Iw9-yW-r57" appends="YES" id="rrQ-ks-xHU"/>
                                                 </connections>
                                             </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o06-uR-I3n">
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ytQ-pQ-ix3">
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="89" id="EPP-sb-5Wq"/>
+                                                            <constraint firstAttribute="height" constant="30" id="dGN-8m-Kuy"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <state key="normal" title="男">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="maleAction:" destination="S82-Um-UPB" eventType="touchUpInside" id="34p-4H-5Ql"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdv-W2-GeH">
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="89" id="hB7-2P-mgs"/>
+                                                            <constraint firstAttribute="height" constant="30" id="izC-AH-9R2"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <state key="normal" title="女">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="femaleAction:" destination="S82-Um-UPB" eventType="touchUpInside" id="FTY-Lg-ulN"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="ytQ-pQ-ix3" secondAttribute="bottom" constant="10" id="HWO-6p-jhN"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ytQ-pQ-ix3" secondAttribute="trailing" constant="10" id="Ksf-I2-3sI"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Pdv-W2-GeH" secondAttribute="bottom" constant="10" id="KzR-5f-BGH"/>
+                                                    <constraint firstAttribute="height" constant="50" id="OkH-q5-CHx"/>
+                                                    <constraint firstItem="ytQ-pQ-ix3" firstAttribute="top" secondItem="o06-uR-I3n" secondAttribute="top" constant="10" id="aYA-HC-DDM"/>
+                                                    <constraint firstAttribute="width" constant="240" id="iYD-2n-UJa"/>
+                                                    <constraint firstItem="Pdv-W2-GeH" firstAttribute="top" secondItem="o06-uR-I3n" secondAttribute="top" constant="10" id="ivE-qP-LRl"/>
+                                                    <constraint firstItem="Pdv-W2-GeH" firstAttribute="leading" secondItem="o06-uR-I3n" secondAttribute="leading" constant="10" id="pui-j7-vht"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lyz-Az-FVm">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="Xfb-AR-fMg"/>
+                                                    <constraint firstAttribute="width" constant="240" id="bO9-0C-XC3"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <state key="normal" title="时间选择">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="timeAction:" destination="S82-Um-UPB" eventType="touchUpInside" id="JCs-by-cXa"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vC4-bm-JKg">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="MNr-vl-3V5"/>
+                                                    <constraint firstAttribute="width" constant="240" id="nT4-Ea-LEO"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="finishAction:" destination="S82-Um-UPB" eventType="touchUpInside" id="Oxg-wl-QMg"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
                                         <constraints>
+                                            <constraint firstItem="Lyz-Az-FVm" firstAttribute="centerX" secondItem="DGz-mH-FBL" secondAttribute="centerX" id="2rZ-NK-qvZ"/>
+                                            <constraint firstItem="o06-uR-I3n" firstAttribute="centerX" secondItem="DGz-mH-FBL" secondAttribute="centerX" id="9qI-pH-XIu"/>
+                                            <constraint firstAttribute="bottom" secondItem="vC4-bm-JKg" secondAttribute="bottom" constant="124" id="GLT-jL-7lq"/>
+                                            <constraint firstItem="o06-uR-I3n" firstAttribute="top" secondItem="GBK-cE-4L4" secondAttribute="bottom" constant="20" id="Jwc-K5-eWm"/>
+                                            <constraint firstItem="vC4-bm-JKg" firstAttribute="centerX" secondItem="DGz-mH-FBL" secondAttribute="centerX" id="LMy-xc-fOD"/>
                                             <constraint firstAttribute="height" constant="667" id="Mwe-2X-LCL"/>
                                             <constraint firstItem="GBK-cE-4L4" firstAttribute="top" secondItem="DGz-mH-FBL" secondAttribute="top" constant="20" id="da6-Sy-5g1"/>
                                             <constraint firstItem="GBK-cE-4L4" firstAttribute="centerX" secondItem="DGz-mH-FBL" secondAttribute="centerX" id="msh-kD-vR1"/>
+                                            <constraint firstItem="Lyz-Az-FVm" firstAttribute="top" secondItem="o06-uR-I3n" secondAttribute="bottom" constant="25" id="z9q-gE-Od7"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -61,7 +130,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="femaleBtn" destination="Pdv-W2-GeH" id="I3a-LG-BMh"/>
+                        <outlet property="finishBtn" destination="vC4-bm-JKg" id="jYI-Up-rid"/>
+                        <outlet property="maleBtn" destination="ytQ-pQ-ix3" id="UiQ-oA-y60"/>
                         <outlet property="selectIconImageView" destination="GBK-cE-4L4" id="jy6-Lh-qoz"/>
+                        <outlet property="timeBtn" destination="Lyz-Az-FVm" id="351-rF-HWP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gL8-bR-ko3" userLabel="First Responder" sceneMemberID="firstResponder"/>

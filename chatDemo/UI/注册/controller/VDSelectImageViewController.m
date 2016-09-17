@@ -10,9 +10,14 @@
 #import "UIViewController+VDAlertController.h"
 #import <LECropPictureViewController/LECropPictureViewController.h>
 #import "UIImage+ScaleImage.h"
+#import "VDDatePickSelectView.h"
 
-@interface VDSelectImageViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+@interface VDSelectImageViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,VDDatePickSelectViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *selectIconImageView;
+@property (weak, nonatomic) IBOutlet UIButton *femaleBtn;
+@property (weak, nonatomic) IBOutlet UIButton *maleBtn;
+@property (weak, nonatomic) IBOutlet UIButton *timeBtn;
+@property (weak, nonatomic) IBOutlet UIButton *finishBtn;
 
 @end
 
@@ -27,6 +32,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.selectIconImageView.image = [UIImage imageNamed:@"add.png"];
+    [self.femaleBtn setBackgroundImage:[UIImage imageNamed:@"sexselect"] forState:UIControlStateSelected];
+    [self.femaleBtn setBackgroundImage:[UIImage imageNamed:@"sexunselect"] forState:UIControlStateNormal];
+    
+    [self.maleBtn setBackgroundImage:[UIImage imageNamed:@"sexunselect"] forState:UIControlStateNormal];
+    [self.maleBtn setBackgroundImage:[UIImage imageNamed:@"sexselect"] forState:UIControlStateSelected];
+    self.maleBtn.selected = YES;
+    
+    [self.finishBtn setBackgroundImage:[UIImage imageNamed:@"sexselect"] forState:UIControlStateNormal];
+    [self.finishBtn setTitle:@"注册" forState:UIControlStateNormal];
+    self.finishBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [self.finishBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     // Do any additional setup after loading the view.
 }
 
@@ -34,6 +50,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 #pragma mark tapAction
 - (IBAction)tapAction:(id)sender
 {
@@ -42,6 +59,22 @@
 - (void)actionTakePhoto//:(id)sender
 {
     NSLog(@"take photo");
+
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        UIImagePickerController * pickerController = [UIImagePickerController new];
+        pickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+        pickerController.delegate = self;
+        pickerController.editing = NO;
+        if([[[UIDevice
+              currentDevice] systemVersion] floatValue]>=8.0) {
+            
+            self.modalPresentationStyle=UIModalPresentationOverCurrentContext;
+        }
+        [self presentViewController:pickerController animated:YES completion:nil];
+        
+    }
+    
 }
 - (void)actionSelectPhotoFromPhotoLibrary//:(id)sender
 {
@@ -84,6 +117,36 @@
         
     }];
 }
+- (IBAction)maleAction:(id)sender
+{
+    UIButton * maleBtn = (UIButton *)sender;
+    maleBtn.selected = !(maleBtn.selected);
+    self.femaleBtn.selected = !maleBtn.selected;
+    
+}
+- (IBAction)femaleAction:(id)sender
+{
+    UIButton * femaleBtn = (UIButton *)sender;
+    femaleBtn.selected = !(femaleBtn.selected);
+    self.maleBtn.selected = !femaleBtn.selected;
+}
+- (IBAction)timeAction:(id)sender
+{
 
+    VDDatePickSelectView * dateSelect = [VDDatePickSelectView new];
+    [dateSelect showInView];
+    dateSelect.delegate = self;
+    return;
 
+}
+
+- (IBAction)finishAction:(id)sender
+{
+}
+#pragma mark delegate
+
+- (void)datePickerSelectTime:(VDDatePickSelectView *)view datePicker:(UIDatePicker *)picker
+{
+    NSLog(@"%@",picker.date);
+}
 @end
