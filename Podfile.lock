@@ -1,0 +1,97 @@
+PODS:
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - CCLogSystem (1.0.1)
+  - CocoaLumberjack (2.3.0):
+    - CocoaLumberjack/Default (= 2.3.0)
+    - CocoaLumberjack/Extensions (= 2.3.0)
+  - CocoaLumberjack/Core (2.3.0)
+  - CocoaLumberjack/Default (2.3.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.3.0):
+    - CocoaLumberjack/Default
+  - DateTools (1.7.0)
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
+  - HyphenateFullSDK (3.1.5)
+  - iAppInfos (0.2.1)
+  - ImagePiker (0.1.0)
+  - IQKeyboardManager (4.0.6)
+  - JSONModel (1.2.0)
+  - LBXScan (1.1.1):
+    - ZXingObjC (~> 3.0)
+  - LECropPictureViewController (0.1.2)
+  - Masonry (1.0.2)
+  - MBProgressHUD (0.9.2)
+  - MJRefresh (3.1.12)
+  - SDWebImage (3.7.6):
+    - SDWebImage/Core (= 3.7.6)
+  - SDWebImage/Core (3.7.6)
+  - SFHFKeychainUtils (0.0.1)
+  - ZXingObjC (3.1.0):
+    - ZXingObjC/All (= 3.1.0)
+  - ZXingObjC/All (3.1.0)
+
+DEPENDENCIES:
+  - AFNetworking (~> 2.6)
+  - CCLogSystem (~> 1.0.1)
+  - CocoaLumberjack (~> 2.3.0)
+  - DateTools (~> 1.7.0)
+  - FMDB (~> 2.6.2)
+  - HyphenateFullSDK
+  - iAppInfos (~> 0.2.1)
+  - ImagePiker (~> 0.1.0)
+  - IQKeyboardManager (~> 4.0.3)
+  - JSONModel (~> 1.2.0)
+  - LBXScan (~> 1.1.1)
+  - LECropPictureViewController (~> 0.1)
+  - Masonry (~> 1.0.0)
+  - MBProgressHUD (~> 0.9.2)
+  - MJRefresh (~> 3.1.0)
+  - SDWebImage (~> 3.7.6)
+  - SFHFKeychainUtils (~> 0.0.1)
+  - ZXingObjC (~> 3.0)
+
+SPEC CHECKSUMS:
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  CCLogSystem: 841a462314c211c561fd846b08fea718e78a567b
+  CocoaLumberjack: 97fab7ee5f507fe54445cca7ea80f926729cfd15
+  DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  HyphenateFullSDK: 536f76eeb0914dba766b1d5d30dee083f0805da2
+  iAppInfos: 090ecd9a694be25968bbdbdbff97841b301a9107
+  ImagePiker: ed95cd0117815e135d7da18c559ddaf0779394ca
+  IQKeyboardManager: c52debb1967799ae7addb98eab0cf328083a874f
+  JSONModel: 12523685c4b623553ccf844bbbf7007624317b2c
+  LBXScan: dfb4d8ae8e4cff2aa0c9e1771e43954dce1469a9
+  LECropPictureViewController: d64cd991d94d7804c0971f97adae6d1bc216a7b8
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
+  SFHFKeychainUtils: 9576b411a79a058f4d5381ace6f3242b9a62e664
+  ZXingObjC: bf15b3814f7a105b6d99f47da2333c93a063650a
+
+PODFILE CHECKSUM: 999e50f537e84c7bd8a782ba1c8d9a8a68fa301d
+
+COCOAPODS: 1.0.1

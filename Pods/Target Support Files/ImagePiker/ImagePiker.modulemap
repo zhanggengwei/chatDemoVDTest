@@ -1,0 +1,6 @@
+framework module ImagePiker {
+  umbrella header "ImagePiker-umbrella.h"
+
+  export *
+  module * { export * }
+}

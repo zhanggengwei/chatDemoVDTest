@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		061D7D61C2875B6BE8FF8994 /* Pods_chatDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4620D5C71AB8DCBE55A276 /* Pods_chatDemo.framework */; };
 		7550429E1D8CC602007FB439 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7550429D1D8CC602007FB439 /* main.m */; };
 		755042A11D8CC602007FB439 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 755042A01D8CC602007FB439 /* AppDelegate.m */; };
 		755042A41D8CC602007FB439 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 755042A31D8CC602007FB439 /* ViewController.m */; };
@@ -35,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3DEBA013D96FE6B209AA3CD5 /* Pods-chatDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chatDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-chatDemo/Pods-chatDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		4292B9741B4391C62F320291 /* Pods-chatDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chatDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-chatDemo/Pods-chatDemo.release.xcconfig"; sourceTree = "<group>"; };
+		6D4620D5C71AB8DCBE55A276 /* Pods_chatDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_chatDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		755042991D8CC602007FB439 /* chatDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chatDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7550429D1D8CC602007FB439 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7550429F1D8CC602007FB439 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +55,8 @@
 		755042BD1D8CC602007FB439 /* chatDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chatDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		755042C11D8CC602007FB439 /* chatDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = chatDemoUITests.m; sourceTree = "<group>"; };
 		755042C31D8CC602007FB439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		755042CF1D8CC7D7007FB439 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		755042D01D8CC7F0007FB439 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				061D7D61C2875B6BE8FF8994 /* Pods_chatDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +85,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6BBF84D51F680AA0403EA25E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3DEBA013D96FE6B209AA3CD5 /* Pods-chatDemo.debug.xcconfig */,
+				4292B9741B4391C62F320291 /* Pods-chatDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		755042901D8CC602007FB439 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +101,8 @@
 				755042B51D8CC602007FB439 /* chatDemoTests */,
 				755042C01D8CC602007FB439 /* chatDemoUITests */,
 				7550429A1D8CC602007FB439 /* Products */,
+				6BBF84D51F680AA0403EA25E /* Pods */,
+				CEC0E2408ED6DBDC82C7307D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +128,8 @@
 				755042AA1D8CC602007FB439 /* LaunchScreen.storyboard */,
 				755042AD1D8CC602007FB439 /* Info.plist */,
 				7550429C1D8CC602007FB439 /* Supporting Files */,
+				755042CF1D8CC7D7007FB439 /* Header.h */,
+				755042D01D8CC7F0007FB439 /* PrefixHeader.pch */,
 			);
 			path = chatDemo;
 			sourceTree = "<group>";
@@ -140,6 +160,14 @@
 			path = chatDemoUITests;
 			sourceTree = "<group>";
 		};
+		CEC0E2408ED6DBDC82C7307D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D4620D5C71AB8DCBE55A276 /* Pods_chatDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 755042C61D8CC602007FB439 /* Build configuration list for PBXNativeTarget "chatDemo" */;
 			buildPhases = (
+				DE4BD9366C4A86C2BA025EE7 /* [CP] Check Pods Manifest.lock */,
 				755042951D8CC602007FB439 /* Sources */,
 				755042961D8CC602007FB439 /* Frameworks */,
 				755042971D8CC602007FB439 /* Resources */,
+				F1959A2B7F736C6B570E1AC9 /* [CP] Embed Pods Frameworks */,
+				C31929CB7BB08B93EB0CBEC5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -267,6 +298,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C31929CB7BB08B93EB0CBEC5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-chatDemo/Pods-chatDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE4BD9366C4A86C2BA025EE7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F1959A2B7F736C6B570E1AC9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-chatDemo/Pods-chatDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		755042951D8CC602007FB439 /* Sources */ = {
@@ -420,8 +499,10 @@
 		};
 		755042C71D8CC602007FB439 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DEBA013D96FE6B209AA3CD5 /* Pods-chatDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/chatDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = chatDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.soft.demo1.chatDemo;
@@ -431,8 +512,10 @@
 		};
 		755042C81D8CC602007FB439 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4292B9741B4391C62F320291 /* Pods-chatDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/chatDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = chatDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.soft.demo1.chatDemo;
@@ -505,6 +588,7 @@
 				755042C81D8CC602007FB439 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		755042C91D8CC602007FB439 /* Build configuration list for PBXNativeTarget "chatDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +597,7 @@
 				755042CB1D8CC602007FB439 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		755042CC1D8CC602007FB439 /* Build configuration list for PBXNativeTarget "chatDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +606,7 @@
 				755042CE1D8CC602007FB439 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
