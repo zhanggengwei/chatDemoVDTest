@@ -30,7 +30,10 @@
 #define kPPUrlBindWeChat [NSString stringWithFormat:@"%@app/user/bindWeChat",kPPUrlHttp]
 
 #define kPPUrlSearchUsers [NSString stringWithFormat:@"%@app/user/search",kPPUrlHttp]
+
 #define kPPUrlSendSms [NSString stringWithFormat:@"%@app/sms/send",kPPUrlHttp]
+
+#define kPPUrlSearchMyListFriends [NSString stringWithFormat:@"%@app/friend/search",kPPUrlHttp]
 
 @interface VDUrlObject : NSObject
 

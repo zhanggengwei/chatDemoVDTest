@@ -32,6 +32,14 @@
     return YES;
 }
 @end
+
+@implementation VDUserBase
++ (BOOL)propertyIsOptional:(NSString *)propertyName
+{
+    return YES;
+}
+@end;
+
 @implementation VDAddress
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
@@ -85,4 +93,13 @@
 {
     return  YES;
 }
+@end
+
+@implementation VDFriendsListResponse
+
++ (BOOL)propertyIsOptional:(NSString *)propertyName
+{
+    return YES;
+}
+
 @end

@@ -11,7 +11,7 @@
 
 @interface VDUserInfoEngine ()
 @property (nonatomic,strong) VDUserInfo * info;
-@property (nonatomic,strong) NSString * token;
+//@property (nonatomic,strong) NSString * token;
 @property (nonatomic,strong) NSString * curentPath;
 
 @end

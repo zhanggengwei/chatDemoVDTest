@@ -10,7 +10,7 @@
 
 @interface VDUserInfoEngine : NSObject
 @property (nonatomic,strong,readonly) VDUserInfo * info;
-@property (nonatomic,strong,readonly) NSString * token;
+@property (nonatomic,strong) NSString * token;
 @property (nonatomic,strong,readonly) NSString * curentPath;
 
 +(instancetype)shareEngine;

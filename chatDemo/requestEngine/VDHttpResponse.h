@@ -13,11 +13,7 @@
 @class VDInterestListModel;
 @class VDJobListModel;
 @class VDAlbum;
-@interface VDAuthorization : JSONModel
-@property (nonatomic,strong) NSString * account;
-@property (nonatomic,strong) NSString * token;
-@end
-@interface VDUserInfo : JSONModel
+@interface VDUserBase : JSONModel
 @property (nonatomic,strong) NSString * userId;
 @property (nonatomic,strong) NSString * avatarId;
 @property (nonatomic,strong) NSString * identify;
@@ -26,12 +22,20 @@
 @property (nonatomic,strong) NSString * nickNameChar;
 @property (nonatomic,strong) NSString * sex;
 @property (nonatomic,strong) VDImUser * imUser;
+@end
+
+
+@interface VDAuthorization : JSONModel
+@property (nonatomic,strong) NSString * account;
+@property (nonatomic,strong) NSString * token;
+@end
+@interface VDUserInfo : VDUserBase
 @property (nonatomic,strong) NSString * sign;
 @property (nonatomic,strong) NSString * birthday;
 @property (nonatomic,strong) NSString * constellation;//星座
 @property (nonatomic,strong) VDAddress *comeFrom;
-@property (nonatomic,strong) VDInterestListModel * interestList;
-@property (nonatomic,strong) VDJobListModel * jobList;
+@property (nonatomic,strong) NSArray<VDInterestListModel *> * interestList;
+@property (nonatomic,strong) NSArray<VDJobListModel*> * jobList;
 @property (nonatomic,strong) NSArray<VDAlbum *> * album;
 @property (nonatomic,strong) NSString * friendUpdateTime;
 @end
@@ -89,6 +93,14 @@
 @interface  VDSearchResponse:VDHttpResponse
 @property (nonatomic,assign) BOOL isFriend;
 @property (nonatomic,strong) VDUserInfo * object;
+
+@end
+
+@interface VDFriendsListResponse : VDHttpResponse
+@property (nonatomic,strong) NSArray<VDUserBase *>* list;
+@property (nonatomic,strong) NSString * currentPage;
+@property (nonatomic,strong) NSString * totalPage;
+@property (nonatomic,strong) NSString * totalSize;
 
 @end
 
