@@ -10,12 +10,18 @@
 
 @interface VDUserInfoEngine : NSObject
 @property (nonatomic,strong,readonly) VDUserInfo * info;
-@property (nonatomic,strong) NSString * token;
+@property (nonatomic,strong,readonly) NSString * token;
 @property (nonatomic,strong,readonly) NSString * curentPath;
-
+@property (nonatomic,strong,readonly) NSArray * FrindsList;
 +(instancetype)shareEngine;
 
-- (void)saveUserInfo:(VDUserInfo *)info;
+- (void)saveUserInfoResponse:(VDLoginResponse *)info;
+
+- (void)saveFrindsList;
+
+#pragma mark loadWebList
+
+- (void)requsetWebContlistPage:(NSInteger)page pageSize:(NSInteger)size;
 
 
 @end

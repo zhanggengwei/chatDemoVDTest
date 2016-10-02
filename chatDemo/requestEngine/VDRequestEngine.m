@@ -9,7 +9,8 @@
 #import "VDRequestEngine.h"
 #import "VDHTTPRequestOperationManager.h"
 #import "VDHttpResponse.h"
-
+#import <iAppInfos/UIDevice+iAppInfos.h>
+#import "Header.h"
 @implementation VDRequestEngine
 + (instancetype)shareEngine
 {
@@ -20,12 +21,7 @@
     });
     return engine;
 }
-- (void)saveUserInfoPrivateInfoAccount:(NSString *)account token:(NSString *)tokenString
-{
-    [SFHFKeychainUtils storeUsername:account andPassword:tokenString forServiceName:VDServiceName updateExisting:YES error:nil];
-    
-    
-}
+
 - (void)_completeWithResponse:(VDHttpResponse *)aResponse block:(PPResponseBlock())aResponseBlock
 {
     if (aResponseBlock) {
@@ -44,18 +40,10 @@
         info = [[VDLoginResponse alloc]initWithDictionary:dict error:&error];
         if(info.code.integerValue == kppRequestSucessCode)
         {
-             [[VDUserInfoEngine shareEngine]saveUserInfo:info.object];
-            [VDUserInfoEngine shareEngine].token = info.authorization.token;
+            [[VDUserInfoEngine shareEngine]saveUserInfoResponse:info];
+            [[VDUserInfoEngine shareEngine]requsetWebContlistPage:1 pageSize:1];
             
-            [self saveUserInfoPrivateInfoAccount:info.authorization.account token:info.authorization.token];
-            [self requestGetFriendsList:^(VDHttpResponse * response) {
-                NSLog(@"response == %@",response);
-                
-            } methodType:2 orderByFirstLetter:YES page:1 size:20 identfify:nil];
-            
-           
             VDImUser * user = info.object.imUser;
-            
             [[RJChatTools shareManager] login:user.userName andPassword:user.password];
         }
         [self _completeWithResponse:info block:responseBlock];
@@ -224,55 +212,4 @@
         
     }];
 }
-// * Integer methodType        //方法参数
-//-- 1，不分页查询所有数据；
-//-- 2，分页查询
-//* Booleand orderByFirstLetter ;    //true表示根据首字母排序，false表示按照添加时间排序
-//Integer page;    //methodType = 2时必填，分页的页数
-//Integer size;    //methodType = 2时必填，每一页的数量
-//String identify;     //不填则查询自己的好友，如果填则查询好友的好友
-- (void)requestGetFriendsList:(void (^)(id))responseBlock methodType:(NSInteger)methodType orderByFirstLetter:(BOOL)oreder page:(NSInteger)page size:(NSInteger)size identfify:(NSString *)identify
-{
-    VDHTTPRequestOperationManager * manager = [VDHTTPRequestOperationManager manager];
-    [manager.requestSerializer setValue:[VDUserInfoEngine shareEngine].token forHTTPHeaderField:@"Authorization"];
-    NSMutableDictionary * param = [NSMutableDictionary new];
-    [param setObject:@(methodType) forKey:@"methodType"];
-    [param setObject:@(oreder) forKey:@"orderByFirstLetter"];
-    if(methodType==2)
-    {
-        [param setObject:@(page) forKey:@"page"];
-        [param setObject:@(size) forKey:@"size"];
-    }
-    if(identify)
-    {
-        [param setObject:identify forKey:@"identify"];
-    }
-    [manager GET:kPPUrlSearchMyListFriends parameters:param success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        NSError * error;
-        VDFriendsListResponse * response = [[VDFriendsListResponse alloc]initWithData:responseObject error:&error];
-        if(response.code.integerValue != kppRequestSucessCode)
-        {
-            
-            return ;
-        }
-        if(response.totalPage.integerValue==page)
-        {
-            return ;
-        }
-        else
-        {
-            return [self requestGetFriendsList:^(id obj) {
-                
-            } methodType:methodType orderByFirstLetter:YES page:page + 1 size:size identfify:identify];
-        }
-        
-        NSLog(@"response == %@",response);
-        
-    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
-        NSLog(@"error == %@",error);
-        
-    }];
-}
-
-
 @end

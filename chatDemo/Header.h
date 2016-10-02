@@ -23,4 +23,7 @@ static const DDLogLevel ddLogLevel = DDLogLevelOff;
 #define PATH_OF_TEMP        NSTemporaryDirectory()
 #define PATH_OF_DOCUMENT    [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
 #define BuglyAppKey @"900053984"
+#define AppLoginAcount @"AppLoginAcount"
+#define AppLoginToken @"AppLoginToken"
+#define AppLoginIdentify @"AppLoginIdentify"
 #endif /* Header_h */

@@ -36,7 +36,6 @@
 
 - (void)loadData
 {
-    VDFileManager * manager  = [VDFileManager sharedManager];
     NSFileManager * fileManager = [NSFileManager defaultManager];
     NSString * path =  [[VDUserInfoEngine shareEngine].curentPath stringByAppendingPathComponent:@"user.db"];
     
@@ -63,6 +62,9 @@
     NSString * createUserInfoSql =@"create Table if not exists User_info (userId  integer  NOT NULL,avatarId integer not null,identify varchar(30) primary KEY NOT NULL,avatarUrl varchar(30) not  null,nickName varchar(30) not null,nickNameChar varchar(30) not null,sex varchar(30) not null,sign text(100),provinceid integer(20),province varchar(16),cityid integer(20),city varchar(16),areaid integer(20),area varchar(16),userName varchar(128) NOT NULL,password varchar(128) NOT NULL,birthday varchar(30) not null,constellation varchar (30) not null,friendUpdateTime varchar(128) not null)";
     
     [_db executeUpdate:createUserInfoSql];
+    NSString * createFriendsListSql = @"create table if not exists Friends_List (userId  integer  NOT NULL,avatarId integer not null,identify varchar(30) primary KEY NOT NULL,avatarUrl varchar(30) NOT NULL,nickName varchar(30) not null,nickNameChar varchar(30) not null,sex varchar(30) not null,userName varchar(30) not NULL)";
+    [_db executeUpdate:createFriendsListSql];
+    
     
 }
 - (void)saveUserInfo:(VDUserInfo *)info
@@ -117,17 +119,13 @@
 
 - (VDUserInfo*)queryUserInfo
 {
-    
      VDFileManager * manager  = [VDFileManager sharedManager];
-     NSString * path = [manager pathForDomain:PPFileDirDomain_User appendPathName:[@"600350" md5]];
+     NSString * path = [manager pathForDomain:PPFileDirDomain_User appendPathName:[[VDUserInfoEngine shareEngine].info.identify md5]];
     path = [path stringByAppendingPathComponent:@"user.db"];
     _db = [FMDatabase databaseWithPath:path];
     if ([_db open]){
-    NSString * querySql = @"select * from User_info where identify = '600350'";
+    NSString * querySql = [NSString stringWithFormat:@"select * from User_info where identify = '/%@'/",[VDUserInfoEngine shareEngine].info.identify];
     FMResultSet * set= [_db executeQuery:querySql];
-
-    
-    
     VDUserInfo * info;
     if(set.next)
     {
@@ -173,8 +171,8 @@
     unsigned int count = 0;
     objc_property_t *propertyList = class_copyPropertyList([VDAddress class], &count);
     
-    for (int i = 0; i < count; i++) {
-       // const char * ivar_getName ( Iv
+    for (int i = 0; i < count; i++)
+    {
      const char *propertyName = property_getName(propertyList[i]);
       
         if([[NSString stringWithFormat:@"%s",propertyName] isEqualToString:name])
@@ -205,7 +203,112 @@
     free(propertyList);
     return NO;
 }
-
+//保存list friends
+-(BOOL)saveFriendsList:(NSArray <VDUserBase *> *)list
+{
+    if(list == nil||list.count ==0)
+        return YES;
+    
+    if([_db open])
+    {
+        [_db beginTransaction];
+       
+        @try {
+            BOOL ret;
+            if([self haveTable:@"Friends_List"])
+            {
+                NSString * dropSql = @"DELETE FROM  Friends_List";
+                 ret = [_db executeUpdate:dropSql];
+                if(!ret)
+                {
+                    if([_db inTransaction])
+                    {
+                        [_db rollback];
+                    }
+                    [_db close];
+                    return NO;
+                }
+            }
+            NSString * insertSql = @"insert into Friend_List into(userId,avatarId,identify,avatarUrl,nickName,nickNameChar,sex,userName) values(?,?,?,?,?,?,?,?)";
+            for (int i = 0; i < list.count; i++)
+            {
+                VDUserBase * base = list[i];
+                ret = [_db executeUpdate:insertSql,base.userId,base.avatarId,base.identify,base.avatarUrl,base.nickName,base.nickNameChar,base.sex,base.imUser.userName];
+                if(!ret)
+                {
+                    if ([_db inTransaction])
+                    {
+                        [_db rollback];
+                    }
+                    [_db close];
+                    return NO;
+                }
+            }
+            if ([_db inTransaction])
+            {
+                [_db commit];
+            }
+        } @catch (NSException *exception) {
+            if([_db inTransaction])
+            {
+                [_db rollback];
+            }
+            return NO;
+            
+        } @finally {
+            [_db close];
+            return YES;
+        }
+    }
+        return YES;
+}
+- (NSArray *)queryFriendsList
+{
+    NSMutableArray * listArr = [NSMutableArray new];
+    NSString * identify = [VDUserInfoEngine shareEngine].info.identify;
+    NSString * searchSql = @"select * from '/%@'/";
+    searchSql = [NSString stringWithFormat:searchSql,identify];
+    if([_db open])
+    {
+        FMResultSet * set = [_db executeQuery:searchSql];
+        while (set.next)
+        {
+            VDUserBase * base = [VDUserBase new];
+            for (int i = 0; i < set.columnCount; i++)
+            {
+                NSString * propertyName = [set columnNameForIndex:i];
+               NSString * propertyValues = [set objectForColumnName:propertyName];
+                if([propertyName isEqualToString:@"userName"])
+                {
+                    VDImUser * imUser = [VDImUser new];
+                    [imUser setValue:propertyValues forKey:propertyName];
+                    base.imUser = imUser;
+                }
+                else
+                {
+                    [base setValue:propertyValues forKey:propertyName];
+                }
+                
+            }
+            [listArr addObject:base];
+        }
+    }
+    return listArr;
+}
+-(BOOL)haveTable:(NSString *)tableName
+{
+    if([_db open])
+    {
+        NSString * searchSql =  [NSString stringWithFormat:@"select * from \'%@\'",tableName];
+        
+        if([_db open])
+        {
+            FMResultSet * set = [_db executeQuery:searchSql];
+            return set.next;
+        }
+    }
+    return NO;
+}
 
 
 @end

@@ -25,35 +25,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    
-    //[[VDTDBEnginer shareManager] queryUserInfo];
-    
-    // 环信UIdemo中有用到友盟统计crash，您的项目中不需要添加，可忽略此处。
-    // [self setupUMeng];
-    
-    // 环信UIdemo中有用到Parse，您的项目中不需要添加，可忽略此处。
-    // [self parseApplication:application didFinishLaunchingWithOptions:launchOptions];
-    
-    //#warning 初始化环信SDK，详细内容在AppDelegate+EaseMob.m 文件中
-    //#warning SDK注册 APNS文件的名字, 需要与后台上传证书时的名字一一对应
-    //    NSString *apnsCertName = nil;
-    //#if DEBUG
-    //    apnsCertName = @"chatdemoui_dev";
-    //#else
-    //    apnsCertName = @"chatdemoui";
-    //#endif
-    //
-    //    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    //    NSString *appkey = [ud stringForKey:@"identifier_appkey"];
-    //    if (!appkey) {
-    //        appkey = EaseMobAppKey;
-    //        [ud setObject:appkey forKey:@"identifier_appkey"];
-    //    }
     NSString * appkey = EaseMobAppKey;
     NSLog(@"%@",NSHomeDirectory());
-    
-    
     [self easemobApplication:application
 didFinishLaunchingWithOptions:launchOptions
                       appkey:appkey
@@ -66,11 +39,7 @@ didFinishLaunchingWithOptions:launchOptions
         [self.window makeKeyAndVisible];
         //TabbarController
     }else{
-        
-        
-        
         self.window.rootViewController = [[RJEngineManager shareManager] loginViewControlelr];
-        
     }
     
     [self.window makeKeyAndVisible];

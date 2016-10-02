@@ -13,6 +13,8 @@
 @class VDInterestListModel;
 @class VDJobListModel;
 @class VDAlbum;
+@protocol VDUserBase
+@end
 @interface VDUserBase : JSONModel
 @property (nonatomic,strong) NSString * userId;
 @property (nonatomic,strong) NSString * avatarId;
@@ -96,8 +98,10 @@
 
 @end
 
+
+
 @interface VDFriendsListResponse : VDHttpResponse
-@property (nonatomic,strong) NSArray<VDUserBase *>* list;
+@property (nonatomic,strong) NSArray <VDUserBase>* list;
 @property (nonatomic,strong) NSString * currentPage;
 @property (nonatomic,strong) NSString * totalPage;
 @property (nonatomic,strong) NSString * totalSize;

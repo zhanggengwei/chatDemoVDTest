@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 @class VDUserInfo;
+@class VDUserBase;
 @interface VDTDBEnginer : NSObject
 +(instancetype)shareManager;
 
 - (void)saveUserInfo:(VDUserInfo *)info;
+-(BOOL)saveFriendsList:(NSArray <VDUserBase *> *)list;
 - (VDUserInfo*)queryUserInfo;
+- (NSArray *)queryFriendsList;
 @end
