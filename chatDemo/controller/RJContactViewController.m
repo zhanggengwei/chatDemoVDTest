@@ -8,9 +8,11 @@
 
 #import "RJContactViewController.h"
 #import "RJAddContactPersonViewController.h"
-@interface RJContactViewController ()
+#import "VDContListTableViewCell.h"
+@interface RJContactViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *RJTableView;
 @property (strong,nonatomic) UIBarButtonItem * leftItem;
+@property (nonatomic,strong) NSArray * friendsList;
 
 @end
 
@@ -18,22 +20,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.friendsList = [[VDUserInfoEngine shareEngine].FrindsList copy];
+    self.RJTableView.delegate = self;
+    self.RJTableView.dataSource = self;
+    
     UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame = CGRectMake(0, 0, 50, 60);
  
     [btn setImage:[self imageSize:CGSizeMake(28, 28) andImage: [UIImage imageNamed:@"add"]] forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
     [btn addTarget:self action:@selector(clickRightAction:) forControlEvents:UIControlEventTouchUpInside];
-    
-
-   // self.title = [[RJChatTools shareManager] username];
-    
-    
-    //NSArray * arr = [[RJChatTools shareManager] getContlistFromServer];
-    //NSLog(@"arr == %@",arr);
-    
-    
-    // Do any additional setup after loading the view.
 }
 
 -(UIImage *)imageSize:(CGSize )size andImage:(UIImage *)image{
@@ -67,14 +63,23 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark UITableviewDataSource
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+
+{
+    VDContListTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"VDContListTableViewCell"];
+    VDUserBase * base = self.friendsList[indexPath.row];
+    [cell layoutData:base];
+    return cell;
 }
-*/
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.friendsList.count;
+    
+}
 @end

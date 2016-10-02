@@ -37,7 +37,9 @@ didFinishLaunchingWithOptions:launchOptions
         NSLog(@"fdsfsdfdsf");
         self.window.rootViewController = [RJEngineManager shareManager].leftViewController;
         [self.window makeKeyAndVisible];
-        //TabbarController
+        [[VDUserInfoEngine shareEngine]loadData];
+        
+        
     }else{
         self.window.rootViewController = [[RJEngineManager shareManager] loginViewControlelr];
     }

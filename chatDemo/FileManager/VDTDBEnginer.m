@@ -12,7 +12,7 @@
 #import "VDUserInfoEngine.h"
 #import <objc/runtime.h>
 #import "VDHttpResponse.h"
-
+#import <iAppInfos/UIDevice+iAppInfos.h>
 
 @implementation VDTDBEnginer
 {
@@ -119,12 +119,21 @@
 
 - (VDUserInfo*)queryUserInfo
 {
+    
+    NSString * identify= @"";
+    if([UIDevice jmo_deviceModelType] == UIDeviceModelTypeSimulator)
+    {
+        identify = [[NSUserDefaults standardUserDefaults]objectForKey:AppLoginIdentify];
+    }else
+    {
+        identify = [SFHFKeychainUtils getPasswordForUsername:AppLoginIdentify andServiceName:VDServiceName error:nil];
+    }
      VDFileManager * manager  = [VDFileManager sharedManager];
-     NSString * path = [manager pathForDomain:PPFileDirDomain_User appendPathName:[[VDUserInfoEngine shareEngine].info.identify md5]];
+     NSString * path = [manager pathForDomain:PPFileDirDomain_User appendPathName:[identify md5]];
     path = [path stringByAppendingPathComponent:@"user.db"];
     _db = [FMDatabase databaseWithPath:path];
     if ([_db open]){
-    NSString * querySql = [NSString stringWithFormat:@"select * from User_info where identify = '/%@'/",[VDUserInfoEngine shareEngine].info.identify];
+    NSString * querySql = [NSString stringWithFormat:@"select * from User_info where identify = \'%@\'",identify];
     FMResultSet * set= [_db executeQuery:querySql];
     VDUserInfo * info;
     if(set.next)
@@ -229,7 +238,7 @@
                     return NO;
                 }
             }
-            NSString * insertSql = @"insert into Friend_List into(userId,avatarId,identify,avatarUrl,nickName,nickNameChar,sex,userName) values(?,?,?,?,?,?,?,?)";
+            NSString * insertSql = @"insert into Friends_List(userId,avatarId,identify,avatarUrl,nickName,nickNameChar,sex,userName) values(?,?,?,?,?,?,?,?)";
             for (int i = 0; i < list.count; i++)
             {
                 VDUserBase * base = list[i];
@@ -265,9 +274,9 @@
 - (NSArray *)queryFriendsList
 {
     NSMutableArray * listArr = [NSMutableArray new];
-    NSString * identify = [VDUserInfoEngine shareEngine].info.identify;
-    NSString * searchSql = @"select * from '/%@'/";
-    searchSql = [NSString stringWithFormat:searchSql,identify];
+    //NSString * identify = [VDUserInfoEngine shareEngine].info.identify;
+    NSString * searchSql = @"select * from Friends_list";
+    //searchSql = [NSString stringWithFormat:searchSql,identify];
     if([_db open])
     {
         FMResultSet * set = [_db executeQuery:searchSql];

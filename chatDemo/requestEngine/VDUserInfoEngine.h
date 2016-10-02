@@ -22,6 +22,6 @@
 #pragma mark loadWebList
 
 - (void)requsetWebContlistPage:(NSInteger)page pageSize:(NSInteger)size;
-
+- (void)loadData;
 
 @end

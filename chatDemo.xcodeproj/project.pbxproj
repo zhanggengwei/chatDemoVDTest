@@ -69,6 +69,8 @@
 		755043791D8CCC11007FB439 /* VDSelectImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 755043511D8CCC11007FB439 /* VDSelectImageViewController.m */; };
 		7550437A1D8CCC11007FB439 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 755043561D8CCC11007FB439 /* LogInViewController.m */; };
 		7550437B1D8CCC11007FB439 /* RJBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 755043591D8CCC11007FB439 /* RJBackView.m */; };
+		75533E5E1DA10025003CEF1A /* VDContListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75533E5D1DA10025003CEF1A /* VDContListTableViewCell.m */; };
+		75533E621DA10379003CEF1A /* VDChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75533E611DA10379003CEF1A /* VDChatViewController.m */; };
 		75907AD01D8CE8BE00B760A3 /* female.png in Resources */ = {isa = PBXBuildFile; fileRef = 75907ACE1D8CE8BE00B760A3 /* female.png */; };
 		75907AD11D8CE8BE00B760A3 /* male.png in Resources */ = {isa = PBXBuildFile; fileRef = 75907ACF1D8CE8BE00B760A3 /* male.png */; };
 		75907AD31D8CE8D700B760A3 /* sexselect.png in Resources */ = {isa = PBXBuildFile; fileRef = 75907AD21D8CE8D700B760A3 /* sexselect.png */; };
@@ -210,6 +212,10 @@
 		755043561D8CCC11007FB439 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		755043581D8CCC11007FB439 /* RJBackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJBackView.h; sourceTree = "<group>"; };
 		755043591D8CCC11007FB439 /* RJBackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJBackView.m; sourceTree = "<group>"; };
+		75533E5C1DA10025003CEF1A /* VDContListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VDContListTableViewCell.h; sourceTree = "<group>"; };
+		75533E5D1DA10025003CEF1A /* VDContListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VDContListTableViewCell.m; sourceTree = "<group>"; };
+		75533E601DA10379003CEF1A /* VDChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VDChatViewController.h; sourceTree = "<group>"; };
+		75533E611DA10379003CEF1A /* VDChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VDChatViewController.m; sourceTree = "<group>"; };
 		75907ACE1D8CE8BE00B760A3 /* female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = female.png; sourceTree = "<group>"; };
 		75907ACF1D8CE8BE00B760A3 /* male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = male.png; sourceTree = "<group>"; };
 		75907AD21D8CE8D700B760A3 /* sexselect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sexselect.png; sourceTree = "<group>"; };
@@ -397,6 +403,8 @@
 				755043071D8CCBFF007FB439 /* RJContactCell.m */,
 				755043081D8CCBFF007FB439 /* RJContactViewController.h */,
 				755043091D8CCBFF007FB439 /* RJContactViewController.m */,
+				75533E5C1DA10025003CEF1A /* VDContListTableViewCell.h */,
+				75533E5D1DA10025003CEF1A /* VDContListTableViewCell.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -481,6 +489,7 @@
 		755043351D8CCC11007FB439 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				75533E5F1DA10351003CEF1A /* chat */,
 				755043361D8CCC11007FB439 /* base  controller */,
 				7550433D1D8CCC11007FB439 /* list */,
 				755043421D8CCC11007FB439 /* storyboard */,
@@ -621,6 +630,15 @@
 				755043591D8CCC11007FB439 /* RJBackView.m */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		75533E5F1DA10351003CEF1A /* chat */ = {
+			isa = PBXGroup;
+			children = (
+				75533E601DA10379003CEF1A /* VDChatViewController.h */,
+				75533E611DA10379003CEF1A /* VDChatViewController.m */,
+			);
+			path = chat;
 			sourceTree = "<group>";
 		};
 		CEC0E2408ED6DBDC82C7307D /* Frameworks */ = {
@@ -842,6 +860,7 @@
 				7550435E1D8CCC11007FB439 /* VDHttpResponse.m in Sources */,
 				755043011D8CCBEA007FB439 /* UIImageView+Utils.m in Sources */,
 				755043781D8CCC11007FB439 /* RegisterViewController.m in Sources */,
+				75533E621DA10379003CEF1A /* VDChatViewController.m in Sources */,
 				7550435B1D8CCC11007FB439 /* VDFileManager.m in Sources */,
 				755042DB1D8CCBD8007FB439 /* LeftSortsViewController.m in Sources */,
 				755043771D8CCC11007FB439 /* RJDynamicViewController.m in Sources */,
@@ -869,6 +888,7 @@
 				755043701D8CCC11007FB439 /* RJNavViewController.m in Sources */,
 				755043001D8CCBEA007FB439 /* UIImage+ScaleImage.m in Sources */,
 				7550436B1D8CCC11007FB439 /* EaseSDKHelper.m in Sources */,
+				75533E5E1DA10025003CEF1A /* VDContListTableViewCell.m in Sources */,
 				755042FE1D8CCBEA007FB439 /* UIButton+ButtonThread.m in Sources */,
 				7550435D1D8CCC11007FB439 /* VDHTTPRequestOperationManager.m in Sources */,
 				7550435F1D8CCC11007FB439 /* VDRequestEngine.m in Sources */,

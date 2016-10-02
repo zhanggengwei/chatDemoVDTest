@@ -50,23 +50,19 @@
 {
     if([UIDevice jmo_deviceModelType] == UIDeviceModelTypeSimulator)
     {
-        self.info.identify = [[NSUserDefaults standardUserDefaults]objectForKey:AppLoginIdentify];
-        
+
         self.token =[[NSUserDefaults standardUserDefaults]objectForKey:AppLoginToken];
         
         self.info = [[VDTDBEnginer shareManager]queryUserInfo];
         
     }else
     {
-    NSString * identify = [SFHFKeychainUtils getPasswordForUsername:AppLoginIdentify andServiceName:VDServiceName error:nil];
+
     self.token = [SFHFKeychainUtils getPasswordForUsername:AppLoginToken andServiceName:VDServiceName error:nil];
     self.info = [[VDTDBEnginer shareManager]queryUserInfo];
     }
 }
-- (void)loadData
-{
-    
-}
+
 - (void)saveUserInfoPrivateInfoAccount:(NSString *)account token:(NSString *)tokenString
 {
 
@@ -98,8 +94,17 @@
 }
 - (NSString *)curentPath
 {
+    NSString * identify = @"";
+    if([UIDevice jmo_deviceModelType] == UIDeviceModelTypeSimulator)
+    {
+        identify = [[NSUserDefaults standardUserDefaults]objectForKey:AppLoginIdentify];
+        
+    }else
+    {
+        identify = [SFHFKeychainUtils getPasswordForUsername:AppLoginIdentify andServiceName:VDServiceName error:nil];
+    }
     VDFileManager * manager = [VDFileManager sharedManager];
-    NSString * curPath = [manager pathForDomain:PPFileDirDomain_User appendPathName:[[VDUserInfoEngine shareEngine].info.identify md5]];
+    NSString * curPath = [manager pathForDomain:PPFileDirDomain_User appendPathName:[identify md5]];
     [manager createPath:curPath];
     _curentPath = curPath;
     return _curentPath;
@@ -137,24 +142,7 @@
         NSError * error;
         VDFriendsListResponse * response = [[VDFriendsListResponse alloc]initWithData:responseObject error:&error];
         [self _completeWithResponse:response block:responseBlock];
-        
-//        if(response.code.integerValue != kppRequestSucessCode)
-//        {
-//            
-//            return ;
-//        }
-//        if(response.totalPage.integerValue==page)
-//        {
-//            self.FrindsList = response.list;
-//            [self saveFrindsList:self.FrindsList];
-//            return ;
-//        }
-//        else
-//        {
-//            return [self requestGetFriendsList:^(VDFriendsListResponse * obj) {
-//                self.FrindsList = obj.list;
-//            } methodType:methodType orderByFirstLetter:YES page:page + 1 size:size identfify:identify];
-//        }
+
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
         NSLog(@"error == %@",error);
         
@@ -184,6 +172,13 @@
             return ;
         }
     } methodType:2 orderByFirstLetter:YES page:page size:size identfify:nil];
+}
+- (void)loadData
+{
+    [self loadUserInfo];
+    self.FrindsList = [[VDTDBEnginer shareManager]queryFriendsList];
+    NSLog(@"fdfdfd");
+    
 }
 
 @end
